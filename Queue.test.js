@@ -42,3 +42,15 @@ test('สร้าง queue size 1 และ dequeue เลย จะต้อ�
     var q = new queue(1);
     expect(q.dequeue()).toBe(null)
 })
+test('bug1', ()=>{
+    var q = new queue(1);
+    expect(q.enqueue(1)).toBe(true)
+    expect(q.dequeue()).toBe(1)
+    expect(q.head).toBe(0)
+})
+test('bug2', ()=>{
+    var q = new queue(1);
+    expect(q.enqueue(1)).toBe(true)
+    expect(q.dequeue()).toBe(1)
+    expect(q.tail).toBe(0)
+})
